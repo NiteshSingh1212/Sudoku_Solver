@@ -2,12 +2,15 @@ class Solution {
 public:
      bool isSafe(vector<vector<char>>& board,int row,int col,char val){
          for(int i=0;i<board.size();i++){
+              //column check
           if(board[i][col]==val){
               return false;
           }
+              //Row check
           if(board[row][i]==val){
               return false;
           }
+              //3*3 mtrix check
           if(board[3*(row/3)+i/3][3*(col/3)+i%3]==val){
               return false;
           }
@@ -25,14 +28,16 @@ public:
                           return true;
                       }
                       else{
+                           //backtracking 
                           board[i][j]='.';
                       }
-                   }
-                 }
+                     }
+                   }                      
                    return false;
               }
            }
        }
+         //all space are done
        return true;
     }
     void solveSudoku(vector<vector<char>>& board){ 
