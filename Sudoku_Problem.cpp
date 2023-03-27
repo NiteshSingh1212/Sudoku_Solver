@@ -32,7 +32,8 @@ public:
                           board[i][j]='.';
                       }
                      }
-                   }                      
+                   } 
+                   // 1 to 9 me se koi bhi value nhi mile current box par then kahi piche galti hai so returning false
                    return false;
               }
            }
